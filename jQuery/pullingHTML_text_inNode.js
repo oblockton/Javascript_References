@@ -1,5 +1,27 @@
+.html()
+// pulls everything inside of the specified element.
+
+Ex: $("#id").html()
+returns all HTML withinh the specified id.
+
+.text()
+
+filters the HTML, returning only the text within.
+
+
+//use jQuery's val method to make live changes to the 'Cool Articles' <h1>!
+
+//The code below creates an event listener that will run any time the input changes.
+
+
+$('#input').on('change', function() {
+    var val;
+    val =
+});
+
 <!DOCTYPE html>
 <!--
+
 -->
 <html lang="en">
 <head>
@@ -57,28 +79,3 @@
     </div>
 </body>
 </html>
-
-
-use a jQuery class selector and featuredArticle variable to toggle the 'featured' class!
-
-
-// don't change this variable!
-var featuredArticle;
-
-featuredArticle = $('.featured').toggleClass('featured');
-
- or
-
- featuredArticle = $('.featured')
- featuredArticle..toggleClass('featured');
-//
- remove the class 'featured' from Article #2 and add it to Article #3!
-
- var article2, article3
-
-article2 = $('.featured');
-
-article3 = article2.next();
-
-article2.toggleClass('featured');
-article3.toggleClass('featured');

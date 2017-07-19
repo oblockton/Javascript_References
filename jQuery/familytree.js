@@ -13,15 +13,17 @@
 .siblings()
 //selects siblings of one level
 
+.next() Ex: var article2 = $('featured') var article3 = article2.next()
+//selects next siblings in DOM tree
+
 // Usage
 
 $('.omari').children()
 // selects the children of the class 'Omari'
-/*
+
 <!DOCTYPE html>
 <!--
 
-This is the HTML document that you'll use jQuery to modify. To take the quiz, click over to app.js!
 
 -->
 <html lang="en">
@@ -81,14 +83,14 @@ This is the HTML document that you'll use jQuery to modify. To take the quiz, cl
 </body>
 </html>
 
-*/
 
-/*
-Use articleList and DOM navigation methods to collect articleList's
+
+
+//Use articleList and DOM navigation methods to collect articleList's
 sibling <h1> (var h1), children (var kids), and parent <div>s (var parents).
 
-Use articleList to navigate to the element(s)!
-*/
+// Use articleList to navigate to the element(s)!
+
 
 // Start with these variable!
 var articleList, h1, kids, parents;
@@ -109,3 +111,108 @@ console.log(h1);
 
 console.log(kids);
 // returns length 4 - li.article-item, li.article-item.featured, li.article-item, li.article-item
+
+
+// USED FOR BELOW FUNCTIONS
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Hide and Seek</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css" />
+  </head>
+  <body>
+    <main id="app">
+      <ul class="unranked-list">
+        <li>2</li>
+        <li>5</li>
+        <li>4</li>
+      </ul>
+
+      <ul class="ranked-list">
+        <li>1</li>
+        <li>2</li>
+      </ul>
+
+      <ul class="ranked-list">
+        <li>12</li>
+        <li>11</li>
+        <li>10</li>
+      </ul>
+
+      <div id="nested">
+        <div>
+          <div>
+            <div>
+              <div class="target">
+                1
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="grand-node">
+        <div>
+          <div>
+            <div>
+              <div>
+                boo!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+    <!-- Open this file and call `mocha.run()` in console to run tests -->
+    <div id="mocha"></div>
+    <script src="node_modules/mocha/mocha.js"></script>
+    <script src="node_modules/expect/umd/expect.min.js"></script>
+    <script>mocha.setup('bdd');</script>
+    <script src="test/index-test.js"></script>
+  </body>
+</html>
+
+
+function getFirstSelector(selector) {
+  const list = document.querySelector(selector)
+  return list
+}
+
+function nestedTarget() {
+  const result = document.querySelector(`#nested .target`)
+  return result
+}
+
+
+function deepestChild() {
+  let node = document.getElementById('grand-node')
+  let nextNode = node.children[0]
+
+  while (nextNode) {
+    node = nextNode
+    nextNode = node.children[0]
+  }
+
+  return node
+}
+
+function increaseRankBy(n) {
+  const lis = document.getElementById(`#app`).querySelectorAll(ul.ranked-list li)
+  for (let i=0; i<lis.length; i++) {
+    lis[i].innerHTML = (parseInt(lis[i].innerHTML)) + 3
+  }
+}
+
+function increaseRankBy(n) {
+  const rankedLists = document.querySelectorAll('.ranked-list')
+
+  for (let i = 0, l = rankedLists.length; i < l; i++) {
+    let children = rankedLists[i].children
+
+    for (let j = 0, k = children.length; j < k; j++) {
+      children[j].innerHTML = parseInt(children[j].innerHTML) + n
+    }
+  }

@@ -1,5 +1,17 @@
+//  change the font-size of all the article-items to 20px!
+
+var articleItems;
+
+articleItems = $('.article-item');
+
+articleItems.css('font-size', '20px');
+
+
 <!DOCTYPE html>
 <!--
+
+
+
 -->
 <html lang="en">
 <head>
@@ -57,28 +69,3 @@
     </div>
 </body>
 </html>
-
-
-use a jQuery class selector and featuredArticle variable to toggle the 'featured' class!
-
-
-// don't change this variable!
-var featuredArticle;
-
-featuredArticle = $('.featured').toggleClass('featured');
-
- or
-
- featuredArticle = $('.featured')
- featuredArticle..toggleClass('featured');
-//
- remove the class 'featured' from Article #2 and add it to Article #3!
-
- var article2, article3
-
-article2 = $('.featured');
-
-article3 = article2.next();
-
-article2.toggleClass('featured');
-article3.toggleClass('featured');

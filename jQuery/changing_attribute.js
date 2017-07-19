@@ -1,5 +1,9 @@
+set the href of the <a> in the first nav item to "#1".
+
+
 <!DOCTYPE html>
 <!--
+
 -->
 <html lang="en">
 <head>
@@ -57,28 +61,24 @@
     </div>
 </body>
 </html>
+*/
 
+var navList, firstItem, link;
 
-use a jQuery class selector and featuredArticle variable to toggle the 'featured' class!
+navList = $('.nav-list');
 
+firstItem = navList.children().first();;
 
-// don't change this variable!
-var featuredArticle;
+link = firstItem.find('a');
 
-featuredArticle = $('.featured').toggleClass('featured');
+link.attr('href', '#1');
 
- or
+// Or condesned
 
- featuredArticle = $('.featured')
- featuredArticle..toggleClass('featured');
-//
- remove the class 'featured' from Article #2 and add it to Article #3!
+link = $('.nav-list').chilldren().first().find('a');
 
- var article2, article3
+link.attr('href', '#1');
 
-article2 = $('.featured');
+// Sinle line possible but not suggested
 
-article3 = article2.next();
-
-article2.toggleClass('featured');
-article3.toggleClass('featured');
+$('.nav-list').children().first().find('a').attr('href', '#1');
