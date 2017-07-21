@@ -1,26 +1,3 @@
-.html()
-// pulls everything inside of the specified element.
-
-Ex: $("#id").html()
-returns all HTML withinh the specified id.
-
-.text()
-
-filters the HTML, returning only the text within.
-
-
-//use jQuery's val method to make live changes to the 'Cool Articles' <h1>!
-
-//The code below creates an event listener that will run any time the input changes.
-
-
-$('#input').on('change', function() {
-    var val, h1;
-    val = $('#input').val();
-    h1 = $('.articles').children('h1');
-    h1.text(val);
-});
-
 <!DOCTYPE html>
 <!--
 
@@ -81,3 +58,17 @@ $('#input').on('change', function() {
     </div>
 </body>
 </html>
+
+// remove the <ul> from the first article item!
+
+var articleItems;
+
+articleItems = $('.article-item') // your code goes here!
+
+var article1 = articleItems.first();
+var unrankedList = article1.children('ul');
+unrankedList.remove();
+console.log(unrankedList);
+
+or
+var unrankedList = article1.find('ul');
