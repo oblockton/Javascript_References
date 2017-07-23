@@ -78,3 +78,18 @@ myButton.on('click', function(){
     </div>
 </body>
 </html>
+
+
+// convenience methods
+
+Ex: Keypress can be used in convenience method fashion
+
+$('selector').keypress(function someFunction(){
+  //code
+});
+
+instead of
+
+$('selector').on('keypress', (function someFunction(){
+  //code
+}));
