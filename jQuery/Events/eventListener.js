@@ -82,14 +82,18 @@ myButton.on('click', function(){
 
 // convenience methods
 
-Ex: Keypress can be used in convenience method fashion
+//Ex: Keypress can be used in convenience method fashion
 
 $('selector').keypress(function someFunction(){
   //code
 });
 
-instead of
+//instead of
 
 $('selector').on('keypress', (function someFunction(){
   //code
 }));
+
+
+// List of convience method options for events
+//http://api.jquery.com/category/events/
